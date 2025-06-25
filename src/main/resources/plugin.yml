@@ -1,0 +1,9 @@
+name: ReportSystem
+main: femboys.are.cute.reportsystem.ReportSystem
+author: FemBoysAreCut3
+version: 1.0
+api-version: '1.21'
+commands:
+  report:
+  reports:
+  reportsystem:
