@@ -38,7 +38,6 @@ public final class GuiReports {
 		String title = ReportSystem.getInstance().getLang().getString("GuiReportsTitle", "&4Reports &8/ &2") + (page + 1);
 		Inventory inventory = Bukkit.createInventory(null, INVENTORY_SIZE, ChatColor.translateAlternateColorCodes('&', title));
 
-		// Set filler items
 		for (int i = 0; i < 8; i++) {
 			inventory.setItem(i, GuiUtils.getFillerItem());
 		}
@@ -46,7 +45,6 @@ public final class GuiReports {
 			inventory.setItem((9 * 5) + i, GuiUtils.getFillerItem());
 		}
 
-		// Close button
 		ItemStack close = new ItemStack(Material.BARRIER);
 		ItemMeta closeMeta = Objects.requireNonNull(close.getItemMeta());
 		closeMeta.setDisplayName(ChatColor.translateAlternateColorCodes('&',
@@ -54,7 +52,6 @@ public final class GuiReports {
 		close.setItemMeta(closeMeta);
 		inventory.setItem(8, close);
 
-		// Previous page button
 		ItemStack prevPage = new ItemStack(Material.ARROW);
 		ItemMeta prevMeta = Objects.requireNonNull(prevPage.getItemMeta());
 		prevMeta.setDisplayName(ChatColor.translateAlternateColorCodes('&',
@@ -62,7 +59,6 @@ public final class GuiReports {
 		prevPage.setItemMeta(prevMeta);
 		inventory.setItem((9 * 5) + 7, prevPage);
 
-		// Next page button
 		ItemStack nextPage = new ItemStack(Material.SPECTRAL_ARROW);
 		ItemMeta nextMeta = Objects.requireNonNull(nextPage.getItemMeta());
 		nextMeta.setDisplayName(ChatColor.translateAlternateColorCodes('&',
@@ -70,7 +66,6 @@ public final class GuiReports {
 		nextPage.setItemMeta(nextMeta);
 		inventory.setItem((9 * 5) + 8, nextPage);
 
-		// Load and display reports
 		File reportsDir = new File(ReportSystem.getInstance().getConfig().getString("ReportsPath", "reports/"));
 		File[] reportFiles = reportsDir.listFiles((dir, name) -> name.endsWith(".json"));
 		if (reportFiles != null) {
